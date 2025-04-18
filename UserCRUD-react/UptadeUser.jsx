@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { UserContext } from './UserContext';
 
 const UpdateUser = () => {
-    
+
   const { updateUser } = useContext(UserContext);
   const [newName, setNewName] = useState('');
 
@@ -12,6 +12,12 @@ const UpdateUser = () => {
       updateUser({ name: newName });
       setNewName('');
     }
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    updateUser({ name: ' ' });
+    setNewName('');
   };
 
   return (
@@ -25,6 +31,9 @@ const UpdateUser = () => {
           placeholder="Enter new name"
         />
         <button type="submit">Update Name</button>
+      </form>
+      <form onSubmit={handleDelete}>
+        <button type="submit">Delete Name</button>
       </form>
     </div>
   );
