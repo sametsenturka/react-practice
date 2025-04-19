@@ -1,0 +1,95 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* App Container */
+  div {
+    text-align: center;
+  }
+  
+  /* Header */
+  header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Calculator Container */
+.calculator {
+    background-color: #ffffff;
+    padding: 25px 10px; /* Increased horizontal padding */
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-rows: auto 1fr; /* Input field on top */
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+    gap: 10px; /* Space between buttons */
+    text-align: center;
+    margin: auto; /* Center the calculator */
+}
+
+/* Input Field */
+.calculator input {
+    grid-column: span 4; /* Input spans all columns */
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: right;
+}
+  /* Buttons */
+  .calculator button {
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .calculator button:hover {
+    background-color: #45a049;
+  }
+  
+  .calculator button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Operator buttons */
+  .calculator button:nth-child(n+11):not(:last-child):not(:nth-last-child(2)) {
+    background-color: #4caf50;
+  }
+  
+  .calculator button:nth-child(n+11):not(:last-child):not(:nth-last-child(2)):hover {
+    background-color: #4caf50;
+  }
+  
+  /* Clear and Equals buttons */
+  .calculator button:last-child {
+    background-color: #f44336;
+  }
+  
+  .calculator button:last-child:hover {
+    background-color: #d32f2f;
+  }
+  
